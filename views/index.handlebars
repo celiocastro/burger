@@ -12,18 +12,19 @@
         </ul>
     </div>
     <div class="burgers-eaten">
-        <h3 class="burger-heading">Burgers Eaten</h3>
+        <h3 class="burger-heading">Burgers Devoured</h3>
         <ul class="burger-list">
             {{#each burgers}} {{#if this.devoured}}
-            <li class="burger-eaten">
-                {{this.burger_name}}
-            </li>
+            <input class="form-control" type="text" placeholder=
+            "{{this.burger_name}}" readonly>
             {{/if}} {{/each}}
         </ul>
     </div>
 </div>
 <div class="burger-entry">
+    <form>
     <input type="text" name="burger-name" class="burger-name" />
     <button id="btn_add">Submit!</button>
     <p>Enter in a burger you would like to eat!</p>
+    </form>
 </div>

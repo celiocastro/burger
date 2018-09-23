@@ -1,3 +1,9 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 8%;
+}
 body {
     background-color: #ffdb58;
     font: 14px normal Arial, Helvetica, sans-serif;
