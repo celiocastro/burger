@@ -22,8 +22,8 @@ var orm = {
     updateOne: function (burger) {
         return new Promise((resolve, reject) => {
             connection.query(
-                "UPDATE burgers SET devoured=? WHERE id=?",
-                [burger.devoured, burger.id], (err, result) => {
+                "UPDATE burgers SET devoured=1 WHERE id=?",
+                burger.id, (err, result) => {
                     if (err) reject(err);
                     resolve(result);
                 }

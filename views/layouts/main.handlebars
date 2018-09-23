@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/burger/public/assets/css/burger-style.css">
+    <title>Burgers App</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="heading">Eat-Da-Burger!</h1>
+        {{{ body }}}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".burger-submit").click(function (event) {
+                event.preventDefault();
+                $.ajax("/api/burger", {
+                    data: {
+                        id: $(this).data("id")
+                    },
+                    method: "PUT"
+                }).done(function (data) {
+                    location.reload();
+                });
+            });
+            $("#btn_add").click(function (event) {
+                event.preventDefault();
+                $.ajax("/api/burger", {
+                    data: {
+                        burger_name: $("input[name='burger-name']").val().trim()
+                    },
+                    method: "POST"
+                }).done(function (data) {
+                    location.reload();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
